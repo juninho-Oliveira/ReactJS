@@ -6,7 +6,7 @@ import './global.css'
 export function App() {
 
   return (
-    <>
+    <div>
       <Header />
     <h1>Hello World</h1>
     <Post 
@@ -17,7 +17,7 @@ export function App() {
       author="Julio silva" 
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit."/>
     
-    </>
+    </div>
   )
 }
 
