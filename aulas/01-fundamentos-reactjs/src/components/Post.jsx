@@ -42,6 +42,10 @@ export function Post({ author, publishedAt, content }) {
         setNewCommentText(event.target.value)
     }
 
+    function onDeleteComment(comment) {
+        console.log(`Deletar comentário ${comment}`)
+    }
+
     return (
         <article className={styles.post}>
             <header>
@@ -61,9 +65,9 @@ export function Post({ author, publishedAt, content }) {
             <div className={styles.content}>
                 {content.map(line => {
                     if (line.type === 'paragraph') {
-                        return <p>{line.content}</p>
+                        return <p key={line.comment}>  {line.content}</p>
                     } else if (line.type === 'link') {
-                        return <p>{line.link}</p>
+                        return <p key={line.comment}>{line.link}</p>
                     }
                 })}
             </div>
@@ -85,7 +89,10 @@ export function Post({ author, publishedAt, content }) {
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment content={comment} />
+                    return (<Comment
+                        key={comment}
+                        content={comment}
+                        onDeleteComment={onDeleteComment} />)
                 })}
             </div>
         </article>
@@ -122,5 +129,22 @@ Quais as condições para eu ter o resultado final.
 2- Quando o forno estiver quente, eu posso colocar a massa para assar;
 3- Quando a massa estiver pronta, eu posso retira-la do forno;
 
+
+----------------------------------------------------------------
+
+# Key no React 
+
+## Por que única ?
+
+3 Momentos em que um componente é renderizado novamente no React.
+
+1. Quando o estado altera;
+2. Quando a propriedade altera;
+3. Quando um componente pai renderiza novamente;
+
+
+## Por que não posso usar o indice do array ?
+
+const post = [1,2,3,4,5]
 
 */
