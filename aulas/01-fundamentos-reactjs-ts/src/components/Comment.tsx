@@ -37,7 +37,7 @@ export function Comment({content, onDeleteComment}: CommentProps) {
         <div className={styles.comment}>
             <Avatar 
             hasBorder={false} 
-            src="https://avatars.githubusercontent.com/u/123269234?v=4" 
+            src="https://img.freepik.com/vetores-premium/meditacao-de-pessoas-indianas-masculinas-fofas-conceito-de-icone-isolado-vetor-premium_551187-31.jpg" 
             alt='' 
             />
 
